@@ -13,7 +13,10 @@ let ans = [];
 let env = '';
 
 const makeParamString = (agrs , params) => {
-    params = params.split(',').map((x)=> x.trim());
+    if(params === '')
+        return '';
+    params = esprima.parseScript(params).body[0].expression;
+    params = params.type === 'SequenceExpression'? params.expressions.map((x) => escodegen.generate(x)) : [escodegen.generate(params)];
     return agrs.map((x , i) => 'let ' + x.name + ' = ' + params[i] + ';').join(' ');
 };
 
