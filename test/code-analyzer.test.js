@@ -28,14 +28,14 @@ describe('1', () => {
                 '    return c;\n' +
                 '}\n' , '1, 2, 3'),
             'n1 [label="-1-\n' +
-            'let a = x + 1;" , color="green" , style=filled , shape="box"] n2 [label="-2-\n' +
-            'let b = a + y;" , color="green" , style=filled , shape="box"] n3 [label="-3-\n' +
-            'let c = 0;" , color="green" , style=filled , shape="box"] n4 [label="-4-\n' +
-            'b < z" , color="green" , style=filled , shape=diamond] n5 [label="-5-\n' +
+            'let a = x + 1;" , fillcolor="green" , style=filled , shape="box"] n2 [label="-2-\n' +
+            'let b = a + y;" , fillcolor="green" , style=filled , shape="box"] n3 [label="-3-\n' +
+            'let c = 0;" , fillcolor="green" , style=filled , shape="box"] n4 [label="-4-\n' +
+            'b < z" , fillcolor="green" , style=filled , shape=diamond] n5 [label="-5-\n' +
             'c = c + 5" , shape="box"] n6 [label="-6-\n' +
-            'return c;" , color="green" , style=filled , shape="box"] n7 [label="-7-\n' +
-            'b < z * 2" , color="green" , style=filled , shape=diamond] n8 [label="-8-\n' +
-            'c = c + x + 5" , color="green" , style=filled , shape="box"] n9 [label="-9-\n' +
+            'return c;" , fillcolor="green" , style=filled , shape="box"] n7 [label="-7-\n' +
+            'b < z * 2" , fillcolor="green" , style=filled , shape=diamond] n8 [label="-8-\n' +
+            'c = c + x + 5" , fillcolor="green" , style=filled , shape="box"] n9 [label="-9-\n' +
             'c = c + z + 5" , shape="box"] n1 -> n2 [] n2 -> n3 [] n3 -> n4 [] n4 -> n5 [label="true"] n4 -> n7 [label="false"] n5 -> n6 [] n7 -> n8 [label="true"] n7 -> n9 [label="false"] n8 -> n6 [] n9 -> n6 []');
     });
 
@@ -50,9 +50,9 @@ describe('1', () => {
                 ' return 1;' +
                 '}' , '1'),
             'n1 [label="-1-\n' +
-            'a == 1" , color="green" , style=filled , shape=diamond] n2 [label="-2-\n' +
+            'a == 1" , fillcolor="green" , style=filled , shape=diamond] n2 [label="-2-\n' +
             'return 1;" , shape="box"] n3 [label="-3-\n' +
-            'return 1;" , color="green" , style=filled , shape="box"] n1 -> n2 [label="true"] n1 -> n3 [label="false"]');
+            'return 1;" , fillcolor="green" , style=filled , shape="box"] n1 -> n2 [label="true"] n1 -> n3 [label="false"]');
     });
 
     it('4', () => {
@@ -61,7 +61,7 @@ describe('1', () => {
                 ' return 1;\n' +
                 '}' , ''),
             'n1 [label="-1-\n' +
-            'return 1;" , color="green" , style=filled , shape="box"]');
+            'return 1;" , fillcolor="green" , style=filled , shape="box"]');
     });
 
     it('5', () => {
@@ -85,8 +85,8 @@ describe('1', () => {
 
     it('8', () => {
         assert.equal(
-            addTag(['n1' , 'label="let = 1;"]'] , 'color=green'),
-            'label="let = 1;" , color=green]');
+            addTag(['n1' , 'label="let = 1;"]'] , 'fillcolor=green'),
+            'label="let = 1;" , fillcolor=green]');
     });
 
     it('9', () => {

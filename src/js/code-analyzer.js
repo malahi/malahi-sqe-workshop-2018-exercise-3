@@ -96,7 +96,7 @@ const parseCode = (codeToParse , apply) => {
     if(arrows[0].length !== 0)
         nextNode(arrows[0][0]);
 
-    nodes[0] = nodes[0].map((x ) => { return ans.includes(x[0])? [x[0] , addTag(x , 'color="green" , style=filled')] : x; }).slice(0 , nodes[0].length - 1);
+    nodes[0] = nodes[0].map((x ) => { return ans.includes(x[0])? [x[0] , addTag(x , 'fillcolor="green" , style=filled')] : x; }).slice(0 , nodes[0].length - 1);
     nodes[0] = nodes[0].map((x , i) => { return [x[0] , addIndex(x , i+1)]; });
     nodes = nodes[0].map((x) => { return isCondition(x[0])? [x[0] , '[' + addTag(x , 'shape=diamond')].join(' ') : [x[0] , '[' + addTag(x , 'shape="box"')].join(' '); });
     arrows = arrows[0].map((x) => x.join(' '));
