@@ -1,1 +1,1 @@
-malahi-sqe-workshop-2018-exercise-3
+malahi-sqe-workshop-2018-exercise-2
